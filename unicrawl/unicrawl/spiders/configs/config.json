@@ -1,0 +1,8 @@
+{
+    "main_nav_xpath": "/html/body/div[1]/div[5]/div[4]/div[2]/div[2]/div[1]/ul/li[5]/ul",
+    "title_xpath": "/html/body/div[1]/div[5]/div[2]/div[2]/h2",
+    "body_xpath": "/html/body/div[1]/div[5]/div[2]/div[2]/table",
+    "university": "Đại học Y Dược Thái Bình",
+    "log_file": "a.log",
+    "wkdir": "./logs"
+}

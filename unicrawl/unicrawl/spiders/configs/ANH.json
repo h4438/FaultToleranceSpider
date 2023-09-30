@@ -1,0 +1,17 @@
+{
+    "text": {
+        "title": [
+            ["/html/body/main/div/div/div[1]/div/div[1]/h5", "xpath"]
+        ],
+        "body": [
+            ["/html/body/main/div/div/div[1]/div/div[4]", "xpath"]
+        ],
+        "intro": [
+            ["/html/body/main/div/div/div[1]/div/div[3]/p/span/span/span", "xpath"]
+        ]
+    },
+    "university": "Học viện An Ninh Nhân Dân",
+    "code": "ANH",
+    "drop_from": ["Xem thêm"]
+}
+

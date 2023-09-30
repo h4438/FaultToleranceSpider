@@ -1,0 +1,22 @@
+{
+    "text": {
+        "title": [
+            ["/html/body/form/div[3]/div[2]/div[1]/div[2]/div[2]/span", "xpath"],
+            [".story_headline", "css"]
+        ],
+        "body": [
+            ["/html/body/form/div[3]/div[2]/div[1]/div[2]/div[3]/div[3]", "xpath"],
+            [".story_content", "css"]
+        ],
+        "intro": [
+            ["/html/body/form/div[3]/div[2]/div[1]/div[2]/div[3]/div[2]/p/span", "xpath"],
+            [".story_teaser", "css"]
+        ],
+        "tags": [
+            ["/html/body/form/div[3]/div[3]/div[1]/div[1]/h1/a", "xpath"]
+        ]
+    },
+    "university": "Học viện Cảnh Sát Nhân Dân",
+    "code": "CSH",
+    "drop_from": ["Xem thêm"]
+}

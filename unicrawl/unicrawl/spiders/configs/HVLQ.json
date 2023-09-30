@@ -1,0 +1,15 @@
+{
+    "text": {
+        "title": [
+			["/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div[1]/div/ol/li[3]/a", "xpath"],
+            ["/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div[2]/article/div/div[1]/h1", "xpath"]
+        ],
+        "body": [
+            ["/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div[2]/section/article/div", "xpath"],
+            ["/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div[2]/article/div", "xpath"]
+        ]
+    },
+    "university": "Học viện Lục Quân",
+    "code": "HVLQ",
+    "drop_from": ["Xem thêm"]
+}

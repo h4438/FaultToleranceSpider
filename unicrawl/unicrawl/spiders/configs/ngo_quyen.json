@@ -1,0 +1,9 @@
+{
+    "main_nav_xpath": "//*[@id=\"tintrongloai\"]",
+    "text": {
+        "title_xpath": "//*[@id=\"tin_tieude\"]",
+        "sum_xpath": "//*[@id=\"tin_tomtat\"]",
+        "body_xpath": "//*[@id=\"tin_noidung\"]"
+    },
+    "university": "Đại học Y Dược Thái Bình"
+}
