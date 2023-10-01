@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": [
+			[".page-header_pageTitle", "css"],
+			[".entry-title", "css"]
+        ],
+        "body": [
+			[".entry-body", "css"]
+        ]
+    },
+    "university": "Đại học Y khoa Tokyo Việt Nam",
+    "code": "THU",
+    "drop_from": [".veu_cta", ".wp-caption", ".veu_socialSet", ".fb-comments", ".addtoany_share_save_container"]
+}

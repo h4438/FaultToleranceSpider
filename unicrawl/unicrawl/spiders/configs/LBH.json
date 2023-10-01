@@ -1,0 +1,15 @@
+{
+    "text": {
+        "title": [
+			["/html/body/div[2]/div/div/div/div/a/h2", "xpath"],
+			["/html/body/div[2]/div/div/div[1]/div[1]/div[1]/h1", "xpath"]
+        ],
+        "body": [
+			["/html/body/div[2]/div/div/div/div", "xpath"],
+			["/html/body/div[2]/div/div/div[1]/div[1]/div[1]", "xpath"]
+        ]
+    },
+    "university": "Đại học Nguyễn Huệ",
+    "code": "LBH",
+    "drop_from": ["Duplicate Title"]
+}

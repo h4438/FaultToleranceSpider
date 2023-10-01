@@ -1,0 +1,16 @@
+{
+    "text": {
+        "title": [
+			[".entry-title", "css"]
+        ],
+        "body": [
+			["/html/body/div/div/div[2]/div/div[1]/main/article/div[3]", "xpath"]
+        ],
+        "tags": [
+			["/html/body/div[1]/div/div/div/a/h2", "xpath"]
+        ]
+    },
+    "university": "Trường Cao đẳng Quân y I",
+    "code": "YTH",
+    "drop_from": ["Xem thêm", "Duplicate title", "#ez-toc-container", "18+"]
+}

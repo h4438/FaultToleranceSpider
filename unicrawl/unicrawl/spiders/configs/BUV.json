@@ -1,0 +1,24 @@
+{
+    "text": {
+        "title": [
+			["/html/body/div[1]/div/div/div/div[1]/h1", "xpath"],
+			["/html/body/div[1]/div/div[2]/div[1]/h2", "xpath"],
+			["div.item:nth-child(1) > h2:nth-child(1)", "css"],
+			[".news-content > h1:nth-child(1)", "css"]
+        ],
+        "body": [
+			["/html/body/div[1]/div/div/div/div[1]", "xpath"],
+			["/html/body/div[1]/div/div[2]/div[1]", "xpath"],
+			["div.item:nth-child(1)", "css"],
+			[".news-content", "css"]
+        ],
+        "intro": [
+        ],
+        "tags": [
+			["/html/body/div[1]/div/div/div/a/h2", "xpath"]
+        ]
+    },
+    "university": "ĐẠI HỌC AN NINH NHÂN DÂN",
+    "code": "ANS",
+    "drop_from": ["Xem thêm", "Duplicate title"]
+}

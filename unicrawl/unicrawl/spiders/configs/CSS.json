@@ -1,0 +1,17 @@
+{
+    "text": {
+        "title": [
+			["/html/body/div[1]/div[4]/div[1]", "xpath"],
+			["/html/body/div[1]/div[4]/div[3]/div/p[1]/span/span/strong[1]/span/span", "xpath"]
+        ],
+        "body": [
+			["/html/body/div[1]/div[4]/div[3]/div", "xpath"]
+        ],
+        "tags": [
+			["/html/body/div[1]/div[4]/div[1]", "xpath"]
+        ]
+    },
+    "university": "ĐẠI HỌC CẢNH SÁT NHÂN DÂN",
+    "code": "CSS",
+    "drop_from": ["Duplicate Title"]
+}

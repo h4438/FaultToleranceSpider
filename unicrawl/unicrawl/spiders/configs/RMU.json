@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": [
+			[".heading", "css"],
+			[".hero-header", "css"],
+			[".content-header-content__heading", "css"]
+        ],
+        "body": [
+			[".body-gridcontent", "css"],
+			["div.aem-GridColumn--default--none:nth-child(1) > div:nth-child(1) > div:nth-child(1)", "css"]
+        ],
+        "intro": [
+			[".btn-rg", "css"]
+        ]
+    },
+    "university": "Đại học RMIT",
+    "code": "RMU",
+    "drop_from": []
+}

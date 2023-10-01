@@ -1,0 +1,25 @@
+{
+    "text": {
+        "title": [
+			["/html/body/div[3]/div/div/div/div/div/h3", "xpath"],
+			[".content > h3:nth-child(1)", "css"],
+			["/html/body/div[3]/div[1]/div[2]", "xpath"]
+        ],
+        "body": [
+			["/html/body/div[3]/div/div/div/div/div/div[2]", "xpath"],
+			[".content > div:nth-child(3)", "css"],
+			["/html/body/div[3]/div[1]/div[5]/div[3]", "xpath"]
+        ],
+        "intro": [
+			["/html/body/div[3]/div/div/div/div/div/div[1]", "xpath"],
+			["/html/body/div[3]/div[1]/div[5]/div[1]", "xpath"]
+        ],
+        "tags": [
+            ["/html/body/form/div[3]/div[3]/div[1]/div[1]/h1/a", "xpath"],
+			["/html/body/div[3]/div[1]/div[1]/a[2]", "xpath"]
+        ]
+    },
+    "university": "Đại học Kỹ thuật - Hậu cần Công an nhân dân",
+    "code": "HCB",
+    "drop_from": ["Xem thêm"]
+}

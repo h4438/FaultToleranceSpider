@@ -1,0 +1,13 @@
+{
+    "text": {
+        "title": [
+			[".entry-title", "css"]
+        ],
+        "body": [
+			[".pf-content", "css"]
+        ]
+    },
+    "university": "Dự bị Đại học Thành phố Hồ Chí Minh",
+    "code": "DBHCM",
+    "drop_from": []
+}
