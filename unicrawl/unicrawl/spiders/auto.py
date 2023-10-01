@@ -5,17 +5,17 @@ from colorama import Fore, Back, Style
 
 class AutoSpider(CrawlSpider):
     name = "auto"
-    allowed_domains = ["hvctcand.edu.vn"]
-    start_urls = ["http://hvctcand.edu.vn/"]
+    allowed_domains = ["tokyo-human.edu.vn"]
+    start_urls = ["https://tokyo-human.edu.vn/"]
     rules = [
-        Rule(LinkExtractor(allow=r"http://hvctcand\.edu\.vn/.*"), callback='parse_item', follow=True),
-        Rule(LinkExtractor(allow=r"https://hvctcand\.edu\.vn/.*"), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r"https://tokyo-human\.edu\.vn/.*"), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r"https://tokyo-human\.edu\.vn/tin-tuc-chu-de/page/(4[0-9]|[5-8][0-9]|90)/.*"), follow=False),
     ]
 
     def __init__(self, *a, **kw):
         super(AutoSpider, self).__init__(*a, **kw)
-        self.config_name = "CSH.json"
-        self.config_path = "/home/h4438/Desktop/app/unicrawl/unicrawl/spiders/configs"
+        self.config_name = "BUV.json"
+        self.config_path = "/FaultToleranceSpider/unicrawl/unicrawl/spiders/configs"
         with open(f"{self.config_path}/{self.config_name}") as f:
             self.data = {**json.load(f)}
         print("Init")
