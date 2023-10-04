@@ -1,24 +1,21 @@
 {
     "text": {
         "title": [
-			["/html/body/div[1]/div/div/div/div[1]/h1", "xpath"],
-			["/html/body/div[1]/div/div[2]/div[1]/h2", "xpath"],
-			["div.item:nth-child(1) > h2:nth-child(1)", "css"],
-			[".news-content > h1:nth-child(1)", "css"]
+			[".banner-def > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(2)", "css"],
+			["/html/body/div[3]/div/div/div[1]/div[2]/div/div/h1", "xpath"],
+			[".title_post", "css"]
         ],
         "body": [
-			["/html/body/div[1]/div/div/div/div[1]", "xpath"],
-			["/html/body/div[1]/div/div[2]/div[1]", "xpath"],
-			["div.item:nth-child(1)", "css"],
-			[".news-content", "css"]
-        ],
-        "intro": [
+			["._wrapper", "css"],
+			[".content-page > div:nth-child(1) > div:nth-child(1)", "css"],
+			[".content_common","css"],
+			[".the-content", "css"]
         ],
         "tags": [
-			["/html/body/div[1]/div/div/div/a/h2", "xpath"]
+			["/html/body/div[3]/div/div/div[1]/div[2]/div/div/h1", "xpath"]
         ]
     },
-    "university": "ĐẠI HỌC AN NINH NHÂN DÂN",
-    "code": "ANS",
-    "drop_from": ["Xem thêm", "Duplicate title"]
+    "university": "Trường Đại học Anh Quốc Việt Nam",
+    "code": "BUV",
+    "drop_from": []
 }

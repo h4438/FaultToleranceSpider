@@ -1,0 +1,20 @@
+{
+    "text": {
+        "title": [
+			[".title-gt", "css"],
+			["/html/body/div[1]/div[2]/section[2]/section/section[1]/div/div/div/div/div[1]/p", "xpath"]
+        ],
+        "body": [
+			[".back_all", "css"],
+			["/html/body/div[1]/div[2]/section[2]/section/section[1]/div/div/div/div/div[2]/div", "xpath"]
+        ],
+        "intro": [
+        ],
+        "tags": [
+			["/html/body/div[1]/div/div/div/a/h2", "xpath"]
+        ]
+    },
+    "university": "ĐẠI HỌC AN NINH NHÂN DÂN",
+    "code": "ANS",
+    "drop_from": ["Xem thêm", "Duplicate title"]
+}

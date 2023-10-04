@@ -1,0 +1,16 @@
+{
+    "text": {
+        "title": [
+			[".page-title > div:nth-child(1)", "css"]
+        ],
+        "body": [
+        ],
+        "intro": [
+        ],
+        "tags": [
+        ]
+    },
+    "university": "ĐẠI HỌC AN NINH NHÂN DÂN",
+    "code": "ANS",
+    "drop_from": ["Xem thêm", "Duplicate title"]
+}

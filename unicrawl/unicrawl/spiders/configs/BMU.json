@@ -1,0 +1,22 @@
+{
+    "text": {
+        "title": [
+			[".overlay-text > h3:nth-child(1)", "css"],
+			["div.col-md-12:nth-child(3) > h3:nth-child(1)", "css"],
+			["h1.title", "css"]
+        ],
+        "body": [
+			["div.col-md-12:nth-child(3)", "css"],
+			[".article-content","css"],
+			["section.kc-elm:nth-child(10)", "css"],
+			[".container-elo-question-col", "css"],
+			[""]
+        ],
+        "tags": [
+			[".navigation > li:nth-child(1) > a:nth-child(3)", "css"]
+        ]
+    },
+    "university": "Đại học Y Dược Buôn Ma Thuột",
+    "code": "BMU",
+    "drop_from": ["Duplicate title"]
+}

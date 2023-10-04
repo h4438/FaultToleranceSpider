@@ -1,0 +1,23 @@
+{
+    "text": {
+        "title": [
+            ["/html/body/div[1]/main/section/div/div/div[1]/h1", "xpath"],
+            [".title-news-detail-left", "css"]
+        ],
+        "body": [
+            ["/html/body/div[1]/main/section/div/div/div[1]/div[2]", "xpath"],
+            [".content_news", "css"]
+        ],
+        "intro": [
+            ["/html/body/div[1]/main/section/div/div/div[1]/div[1]", "xpath"],
+            [".que_news", "css"]
+        ],
+        "tags": [
+            ["/html/body/div[1]/main/section/div/div/div[1]/ol/li[3]/a", "xpath"],
+            [".breadcrumb > li:nth-child(3) > a:nth-child(1)", "css"]
+        ]
+    },
+    "university": "Cao đẳng Kỹ thuật Hải quân",
+    "code": "CĐKT",
+    "drop_from": ["Xem thêm"]
+}
