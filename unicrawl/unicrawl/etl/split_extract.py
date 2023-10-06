@@ -7,7 +7,7 @@ import os
 import htmlmin
 
 EOS = "."
-MAX_WINDOW_SIZE = 1000
+MAX_WINDOW_SIZE = 1800
 
 def list_tags(html):
     soup = BS(html, "html.parser")
@@ -74,8 +74,12 @@ def to_md(data):
     return data_md
 
 def fix_multi_space(data):
+    if len(data) == 0:
+        return data
     tmp = re.sub(r"\n{3,}",".\n\n", data)
     content = re.sub(r"\s{3,}", ".\n", tmp)
+    if content[0] == ".":
+        return content[1:]
     return content
 
 def remove_abnormal(line):
@@ -88,38 +92,26 @@ def remove_abnormal(line):
         result = re.sub(p," ",result)
     return result
 
-def get_last_sentence(para):
-    sents = para.split(",")
-    result = ""
-    for s in sents[::-1]:
-        if len(s) == 0:
-            continue
-        result = s
-        break
-    return result
+def get_last_sentence(para, size):
+    words = para.split(" ")[-size:]
+    return " ".join(words)
 
-def clean_split(raw_html):
-    content = []
-    html = clean_html(raw_html)
-    data_md = to_md(html)
-    data_md = fix_multi_space(data_md)
+def window_slide(para, eos=".", max_size=1800, size=20):
+    eos = "."
     prev_line = ""
-    for line in data_md.split(EOS):
-        line = remove_abnormal(line)
+    content = []
+    for line in para.split(eos):
+        line = remove_abnormal(line)+"."
         cand_line = (prev_line+"\n"+line).strip()
         cand_length = len(cand_line)
-        if cand_length == MAX_WINDOW_SIZE:
+        if cand_length == max_size:
             content.append(cand_line)
-            prev_line = get_last_sentence(cand_line).strip()+EOS
+            prev_line = get_last_sentence(cand_line,size).strip()
 
-        #if cand_length >= .8*MAX_WINDOW_SIZE and cand_length <= MAX_WINDOW_SIZE:
-        #    content.append(cand_line)
-        #    prev_line = ""
-
-        elif cand_length > MAX_WINDOW_SIZE:
+        elif cand_length > max_size:
             content.append(prev_line)
-            prev_line = get_last_sentence(cand_line).strip()
-            prev_line = f"{prev_line}{EOS}\n{line}"
+            prev_line = get_last_sentence(cand_line,size).strip()
+            prev_line = f"{prev_line}\n{line}"
 
         else:
             prev_line = cand_line 
@@ -127,8 +119,19 @@ def clean_split(raw_html):
         content.append(prev_line)
     return content 
 
-def clean_one_file(file):
-    data_path = f"./data/{file}"
+def clean_split(raw_html):
+    content = []
+    max_size = 1800
+    html = clean_html(raw_html)
+    data_md = to_md(html)
+    data_md = fix_multi_space(data_md)
+    if len(data_md) <= max_size:
+        return [data_md]
+    content = window_slide(data_md, eos=".", max_size=max_size, size=20)
+    return content
+
+def clean_one_file(path,file, outpath):
+    data_path = f"{path}/{file}"
     html_tables = []
     df = pd.read_json(data_path, lines=True)
     print("Before:", df.shape)
@@ -170,12 +173,16 @@ def clean_one_file(file):
     adf = adf[adf["body"].str.len() > 0]
     adf = adf.drop_duplicates(subset=['body'])
     print("Final:",adf.shape)
-    adf.to_json(f"./ver1/{file}", orient='records', lines=True, force_ascii=False)
+    adf.to_json(f"{outpath}/{file}", orient='records', lines=True, force_ascii=False)
     tdf = pd.DataFrame(html_tables)
     tdf.to_json(f"./table/table_{file}", orient="records", lines=True, force_ascii=False)
 
 if __name__ == "__main__":
-    files = os.listdir("./data")
+    path = "./data/hieu"
+    outpath = "./hieud"
+    files = os.listdir(path)
     for f in files:
         print(f)
-        clean_one_file(f)
+        if ".jsonl" not in f:
+            continue
+        clean_one_file(path, f, outpath)

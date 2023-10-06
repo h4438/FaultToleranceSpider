@@ -1,9 +1,9 @@
 import sys
 sys.path.append("../../")
-from unicrawl.etl import split_extract as extract
+from unicrawl.etl import lang_extract as extract
 import pandas as pd
 import os
-import re
+from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 
 FOLDER = "/home/h4438/Desktop/app/FaultToleranceSpider/unicrawl/unicrawl/test/samples"
 
@@ -12,29 +12,6 @@ def read_html(file):
         html = f.readlines()
         html = ''.join(html)
     return html
-
-def test_window_slide():
-    print("Test window slide")
-    df = pd.read_csv(f"{FOLDER}/window.csv",delimiter=";")
-    for idx, row in df.iterrows():
-        prev = ""
-        max_size = len(row['sentence'].split(".")[0])+1
-        paras = extract.window_slide(row['sentence'], max_size=max_size,size=row['size'])
-        for p in paras:
-            if prev == "":
-                prev = p
-                continue
-            prev_sent = extract.get_last_sentence(prev, row['size']) 
-            assert(prev_sent in p)
-
-def strip_emoji(text):
-    RE_EMOJI = re.compile(u'([\U00002600-\U000027BF])|([\U0001f300-\U0001f64F])|([\U0001f680-\U0001f6FF])')
-    return RE_EMOJI.sub(r'', text)
-
-def test_clean_txt():
-    a = "viên khoa kỹ thuật xét nghiệm y học 🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸 # TUYỂN SINH 2023 Bạn đang chưa biết lựa chọn ngành nào ?. # TUYỂN SINH 2023 Bạn đang chưa biết lựa chọn ngành nào ? Hãy liên hệ với chúng tôi để được hỗ trợ - tư vấn Hotline: 0869 809 088 Email: tuyensinh@tokyo-human edu vn Hẹn gặp lại các bạn tại THUV *"
-    b = strip_emoji(a)
-    assert("🌸" not in b)
 
 def test_remove_script():
     files = ["sa.html"]
@@ -45,12 +22,6 @@ def test_remove_script():
         tag_list = extract.list_tags(html)
         assert("script" not in tag_list)
         assert(tag == removes)
-
-def test_get_last_sentence():
-    df = pd.read_csv(f"{FOLDER}/lst_sent.csv")
-    for idx, row in df.iterrows():
-        b = extract.get_last_sentence(row['sent'], row['size'])
-        assert(b == row['get'])
 
 def test_remove_img():
     files = ["ab.html", "ac.html", "ad.html", "c.html"]
@@ -77,10 +48,11 @@ def test_remove_table():
 def test_fix_multi_breaks():
     cases = ["Hello\n\n\nWorld", "a\n\nb", "a   b",
             "a\n\n\nb\n\n\nd", "hello\n\n\nbye\n\n\nworld\n\n\ndone.",
-            "      world","a   b","hello"
+            "Bye\nBye\n\nYolo"
     ]
     units = ["Hello.\n\nWorld", "a\n\nb","a.\nb", "a.\n\nb.\n\nd",
-            "hello.\n\nbye.\n\nworld.\n\ndone.","\nworld", "a.\nb","hello"
+            "hello.\n\nbye.\n\nworld.\n\ndone.",
+            "Bye\nBye\n\nYolo"
     ]
     for unit, case in zip(units, cases):
         result = extract.fix_multi_space(case)

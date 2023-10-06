@@ -1,6 +1,7 @@
 data/
 table/
 ok/
+.ipynb_checkpoints/
 logs/
 __pycache__/
 ver1/
